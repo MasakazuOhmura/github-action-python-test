@@ -1,16 +1,24 @@
-# Workflow Name
-name: My Shell Commands
+# 参考
+# https://docs.github.com/ja/actions/learn-github-actions/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows
+
+# Workflow名
+name: Shell Commands
 # イベントトリガー
-# Git Pushした時にこのワークフローを実行する: https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows
-on: [push]  # on: [push, fork]
+# Git Pushした時にこのワークフローを実行する
+on: [push]
 
 jobs:
-  run-shell-command: # job名（任意の名前）
-    runs-on: ubunt-latest # virtual machineの形式を指定
-    steps: # jobのステップ
-      - name: echo a string  #ステップ名
+  # job名(任意の名前で良い)
+  run-shell-commmand:
+    # virtual machineの形式を指定
+    runs-on: ubuntu-latest
+    # jobのステップ
+    steps:
+      # ステップ名
+      - name: echo a string
         run: echo "Hello World"
+      # ステップ2
       - name: multiline script
-        run: | # 複数のコマンドを記載したいときは、|（パイプ）でつながく
-          node: -v
-          npm  -v
+        run: | # 複数のコマンドを記載したいときは|(パイプ)で繋ぐ
+          node -v
+          npm -v
