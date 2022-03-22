@@ -1,8 +1,8 @@
 # Workflow名
 name: Shell Commands
 # イベントトリガー
-# Git Pushした時にこのワークフローを実行する
-on: [push]
+# Git Pushした時にこのワークフローを実行する: https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows
+on: [push]  # on: [push, fork]
 
 jobs:
   run-shell-command: # job名（任意の名前）
